@@ -1,0 +1,12 @@
+*.sw[op]
+*.pyc
+docs/_build
+.coverage
+*.ropeproject
+dist
+*.egg-info
+.tox
+cover
+coverage.xml
+pylint.out
+xunit.xml

@@ -1,0 +1,33 @@
+<!doctype html>
+<title>Upload new File</title>
+<h1>Jquery Uploader</h1>
+<input id="fileupload" type="file" name="file" data-url="/upload">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/vendor/jquery.ui.widget.js"></script>
+<script src="/js/jquery.iframe-transport.js"></script>
+<script src="/js/jquery.fileupload.js"></script>
+<script>
+$(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.files, function (index, file) {
+                console.log(data);
+                console.log("File is at " + data.result.result);
+                $('#fileList').append('<li><a href="' + data.result.result + '">Auto Upload</a></li>');
+            });
+        }
+    });
+});
+</script>
+<hr>
+<h1>Upload new File</h1>
+<form action="" method=post enctype=multipart/form-data>
+    <p><input type=file name=file>
+        <input type=submit value=Upload>
+</form>
+<ul id="fileList">
+        {% for key,value in file_list.items() %}
+        <li> <a href="{{ value }}">{{ key }}</a> </li>
+    {% endfor %}
+</ul>
