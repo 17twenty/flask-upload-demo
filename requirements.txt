@@ -12,7 +12,7 @@ pluggy==0.3.1
 py==1.4.31
 pycparser==2.14
 pyflakes==1.0.0
-requests==2.10.0
+requests==2.20.0
 requests-oauthlib==0.6.1
 virtualenv==15.0.3
 Werkzeug==0.15.3
